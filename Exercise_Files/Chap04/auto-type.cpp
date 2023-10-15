@@ -1,15 +1,12 @@
 // auto-type.cpp by Bill Weinman [bw.org]
 // updated 2022-05-25
-#include <format>
+// MarcoPSM 2023-10-15
 #include <iostream>
 #include <typeinfo>
 
-using std::format;
-using std::cout;
-
 int main() {
-    std::string s {"This is a string"};
-    auto x = s;
-    cout << format("x is {}\n", x);
-    cout << format("type of x is {}\n", typeid(x).name());
+  std::string s{"This is a string"};
+  auto x = s;
+  std::cout << "x is " << x << std::endl;
+  std::cout << "type of x is " << typeid(x).name() << std::endl;
 }
