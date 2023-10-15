@@ -1,12 +1,9 @@
 // variables.cpp by Bill Weinman [bw.org]
 // updated 2022-06-12
-#include <format>
+// MarcoPSM 2023-10-15
 #include <iostream>
 
-using std::format;
-using std::cout;
-
 int main() {
-    int i {};
-    cout << format("i is {}\n", i);
+  int i{};
+  std::cout << "i is " << i << std::endl;
 }
