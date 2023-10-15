@@ -1,17 +1,11 @@
 // func.cpp by Bill Weinman [bw.org]
 // updated 2022-05-23
-#include <format>
+// MarcoPSM 2023-10-15
 #include <iostream>
 
-using std::format;
-using std::cout;
+void func() { std::cout << "this is func()\n"; }
 
-void func() {
-     cout << "this is func()\n";
-}
-
-int main()
-{
-    cout << "this is main()\n";
-    func();
+int main() {
+  std::cout << "this is main()\n";
+  func();
 }

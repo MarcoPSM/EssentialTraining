@@ -1,15 +1,12 @@
 // for.cpp by Bill Weinman [bw.org]
 // updated 2022-06-15
-#include <format>
+// MarcoPSM 2023-10-15
 #include <iostream>
 
-using std::format;
-using std::cout;
-
 int main() {
-    int array[] { 1, 2, 3, 4, 5 };
+  int array[]{1, 2, 3, 4, 5};
 
-    for (int i {0}; i < 5; ++i) {
-        cout << format("element {} is {}\n", i, array[i]);
-    }
+  for (int i{0}; i < 5; ++i) {
+    printf("element %d is %d\n", i, array[i]);
+  }
 }
