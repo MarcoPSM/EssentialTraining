@@ -1,16 +1,26 @@
 // func.cpp by Bill Weinman <http://bw.org/>
 // updated 2020-06-24
-#include <format>
+// MarcoPSM 2023-10-19
 #include <iostream>
 
-using std::format;
-using std::cout;
-
 void func() {
-    cout << "this is func()\n";
+  int a = 5;
+  static int b = 5;
+  printf("a=%d b=%d\n", ++a, ++b);
+}
+
+void otherfunc(const int &a) {
+  //++a;
+  printf("a=%d\n", a);
 }
 
 int main() {
-    cout << "this is main()\n";
-    func();
+  std::cout << "this is main()\n";
+  func();
+  func();
+  func();
+
+  int a{47};
+  otherfunc(a);
+  printf("a=%d\n", a);
 }

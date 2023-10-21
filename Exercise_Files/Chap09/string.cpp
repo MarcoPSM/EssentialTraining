@@ -1,66 +1,63 @@
 // string.cpp by Bill Weinman [bw.org]
 // updated 2022-06-21
-#include <format>
+// MarcoPSM 2023-10-21
 #include <iostream>
 #include <string>
 
-using std::format;
-using std::cout;
-using std::string;
-
 int main() {
-    string s1 {"This is a string"};
-    
-    // size & length
-    cout << format("length is same as size: {}\n", s1.length());
-    cout << format("size is same as length: {}\n", s1.size());
-    
-    // + for concatenation
-    cout << "concatenated strings: ";
-    string s2 = s1 + ":" + "this is also a string";
-    cout << s2;
-    cout << '\n';
+  std::string s1{"This is a string"};
 
-    // compare
-    cout << format("is s1 == s2? {}\n", s1 == s2 ? "yes" : "no");
-    cout << "copy-assign s2 = s1\n";
-    s2 = s1;
-    cout << format("is s1 == s2? {}\n", s1 == s2 ? "yes" : "no");
+  // size & length
+  printf("length is same as size: %d\n", s1.length());
+  printf("size is same as length: %d\n", s1.size());
 
-    string otherstr {"other string"};
-    cout << format("is s1 > otherstr? {}\n", s1 > otherstr ? "yes" : "no");
-    cout << format("is s1 < otherstr? {}\n", s1 < otherstr ? "yes" : "no");
-    cout << format("is otherstr > s1? {}\n", otherstr > s1 ? "yes" : "no");
-    cout << format("is otherstr < s1? {}\n", otherstr < s1 ? "yes" : "no");
-    cout << '\n';
+  // + for concatenation
+  std::cout << "concatenated strings: ";
+  std::string s2 = s1 + " : " + "this is also a string";
+  std::cout << s2;
+  std::cout << '\n';
 
-    // iteration
-    cout << "each character: ";
-    for (const auto& c : s1) {
-        cout << format("{} ", c);
-    }
-    cout << '\n';
-    
-    // insert & erase with an iterator
-    s1.insert(s1.begin() + 5, 'X');
-    cout << format("s1 after insert: {}\n", s1);
-    
-    s1.erase(s1.begin() + 5);
-    cout << format("s1 after erase: {}\n", s1);
-    cout << '\n';
+  // compare
+  printf("is s1 == s2? %d\n", s1 == s2 ? "yes" : "no");
+  std::cout << "copy-assign s2 = s1\n";
+  s2 = s1;
+  printf("is s1 == s2? %s\n", s1 == s2 ? "yes" : "no");
 
-    // replace
-    s1.replace(5, 2, "ain't");
-    cout << format("s1 after replace: {}\n", s1);
+  std::string otherstr{"other string"};
+  printf("is s1 > otherstr? %s\n", s1 > otherstr ? "yes" : "no");
+  printf("is s1 < otherstr? %s\n", s1 < otherstr ? "yes" : "no");
+  printf("is otherstr > s1? %s\n", otherstr > s1 ? "yes" : "no");
+  printf("is otherstr < s1? %s\n", otherstr < s1 ? "yes" : "no");
+  std::cout << '\n';
 
-    // substr
-    cout << format("substr: {}\n", s1.substr(5, 5));
+  // iteration
+  std::cout << "each character: ";
+  for (const auto &c : s1) {
+    // printf("%s ", c);
+    std::cout << c << " ";
+  }
+  std::cout << '\n';
 
-    // find
-    size_t pos = s1.find("s");
-    cout << format("find first \"s\" in s1 (pos): {}\n", pos);
-    
-    // rfind
-    pos = s1.rfind("s");
-    cout << format("find last \"s\" in s1 (pos): {}\n", pos);
+  // insert & erase with an iterator
+  s1.insert(s1.begin() + 5, 'X');
+  printf("s1 after insert: %s\n", s1.c_str());
+
+  s1.erase(s1.begin() + 5);
+  printf("s1 after erase: %s\n", s1.c_str());
+  std::cout << '\n';
+
+  // replace
+  s1.replace(5, 2, "ain't");
+  printf("s1 after replace: %s\n", s1.c_str());
+
+  // substr
+  printf("substr: %s\n", s1.substr(5, 5).c_str());
+
+  // find
+  size_t pos = s1.find("s");
+  printf("find first \"s\" in s1 (pos): %d\n", pos);
+
+  // rfind
+  pos = s1.rfind("s");
+  printf("find last \"s\" in s1 (pos): %d\n", pos);
 }
