@@ -1,7 +1,4 @@
-# EssentialTraining
+# Develop skills in C++
 
-SW Development project C++ strategic competencies
+Material from various courses on C++.
 
-## Run
-
-g++ working.cpp && ./a.out
