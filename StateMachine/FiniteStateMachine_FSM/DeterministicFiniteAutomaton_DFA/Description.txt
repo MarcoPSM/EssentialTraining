@@ -1,0 +1,9 @@
+The state machine for the traffic light example is a Deterministic Finite State Machine (DFA). 
+Characteristics:
+
+Finite States: 
+- It has a finite number of states (Green, Yellow, Red).
+Deterministic Transitions: 
+- Each state has a defined transition to the next state without ambiguity.
+No Additional Memory: 
+- Transitions depend only on the current state, without considering external inputs or events.
