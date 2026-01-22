@@ -30,3 +30,4 @@
 *.exe
 *.out
 *.app
+DesignPatterns/CreationalPatterns/Singleton/singleton
